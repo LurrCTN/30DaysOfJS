@@ -20,13 +20,13 @@ function moveClockHands({seconds, minutes, hours}) {
     minutesHand.style.transition = `none`
     secondsHand.style.transition = `none`
 
-    hoursHand.style.transform = `rotate(${(seconds * 6) + 90}deg)`
+    secondsHand.style.transform = `rotate(${(seconds * 6) + 90}deg)`
     minutesHand.style.transform = `rotate(${(minutes * 6) + 90}deg)`
-    secondsHand.style.transform = `rotate(${(hours * 30) + 90}deg)`
+    hoursHand.style.transform = `rotate(${(hours * 30) + 90}deg)`
   } else {
-    hoursHand.style.transform = `rotate(${(seconds * 6) + 90}deg)`
+    secondsHand.style.transform = `rotate(${(seconds * 6) + 90}deg)`
     minutesHand.style.transform = `rotate(${(minutes * 6) + 90}deg)`
-    secondsHand.style.transform = `rotate(${(hours * 30) + 90}deg)`
+    hoursHand.style.transform = `rotate(${(hours * 30) + 90}deg)`
     
     hoursHand.style.transition = `all .09s`
     minutesHand.style.transition = `all .09s`
