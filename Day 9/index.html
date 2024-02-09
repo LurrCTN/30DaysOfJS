@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log(dogs)
+    console.table(dogs)
+
+    // Interpolated
+    dogs.forEach(({name, age}) => {
+      // ES6 method
+      console.log(`The dog's name is ${name}`)
+      console.log(`${name} is ${age} years old`)
+      console.log("---------")
+
+      // string interpolation method
+      console.log("The dog's name is %s", name)
+      console.log("%s is %s years old", name, age)
+      console.log("---------")
+    })
+
+    // Styled
+    console.log('%chello world', 'font-size: 20px; color : red; background: radial-gradient(#232323, #f0f0f0)')
+    // you can do better than me
+
+    // warning!
+    console.warn('keep talking and you will see')
+
+    // Error :|
+    console.error('Syntax Error')
+
+    // Info
+    console.info('i like playing games')
+
+    // Testing
+    const javascriptIsUgly = false
+    console.assert(javascriptIsUgly === true, 'Wrong! (some times)')
+
+    // clearing
+    // console.clear()
+
+    // Viewing DOM Elements
+    // console.dir(elem)
+    // console.dirxml(elem)
+    // console.log(elem)
+
+    // Grouping together
+    dogs.forEach(({name, age}) => {
+      // shows uncollapsed groups
+      console.group(name)
+      console.log(`The dog's name is ${name}`)
+      console.log(`${name} is ${age} years old`)
+      console.groupEnd(name)
+
+      // shows collapsed groups
+      console.groupCollapsed(name)
+      console.log(`The dog's name is ${name}`)
+      console.log(`${name} is ${age} years old`)
+      console.groupEnd(name)
+
+    })
+    
+
+    // counting
+    console.count('dogs')
+    console.count('cats')
+    console.count('dogs')
+    console.count('cat')
+    console.count('dogs')
+    console.count('dog')
+    console.count('dogs')
+    console.count('dogs')
+    console.count('dogs')
+    console.count('dogs')
+
+    // timing
+    console.time('timing')
+    dogs.forEach(() => {
+      console.log('hello from dogs array')
+    })
+    console.timeEnd('timing')
+
+
+    // TODO: add playground and new console methods and debuggin
+
+  </script>
+</body>
+</html>
